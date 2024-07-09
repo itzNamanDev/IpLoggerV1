@@ -18,6 +18,8 @@ Welcome to the IP Logger repository! This is a simple project that demonstrates 
    git clone https://github.com/your-username/ip-logger.git
    cd ip-logger
    ```
+
+   **NOTE: DOWNLOAD NGROK AND VERIFY ITS AUTHTOKEN!**
 # 2. Set up your Discord Webhook
 
 **Create a new webhook in your Discord server**
@@ -28,6 +30,16 @@ Welcome to the IP Logger repository! This is a simple project that demonstrates 
 
 ## **📋 Usage**
 **Simply host the index.html file on your web server. When someone visits the site, their IP address will be logged and sent to the specified Discord channel via the webhook.**
+```
+python3 -m http.server 8000
+```
+```
+OPTIONAL
+sudo mv /path/to/ngrok /usr/local/bin/
+```
+```
+ngrok http 8000
+```
 
 ## **📂 Project Structure**
 ```bash
