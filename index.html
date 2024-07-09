@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IP Logger</title>
+</head>
+<body>
+  <h1>Welcome to the IP Logger!</h1>
+  <p>Your IP address will be logged.</p>
+
+  <script>
+    function getIPAddress() {
+      // Use a fetch request to get the IP address
+      fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+          // Extract the IP address
+          const ipAddress = data.ip;
+          // Send the IP address to Discord
+          sendToDiscord(ipAddress);
+        })
+        .catch(error => {
+          console.error("Error getting IP address:", error);
+        });
+    }
+
+    function sendToDiscord(ipAddress) {
+      // Replace with your actual Discord webhook URL
+      const webhookUrl = "https://discord.com/api/webhooks/1257278872106307586/98V-jdvIWaEFIv1uBqC3e60aokEtZn0qNT3_PLctqPZLFThogKfu7pHQ1Kd6MlhkFT8W";
+
+      // Construct the message to send
+      const message = `New visitor: ${ipAddress}`;
+
+      // Send the message to Discord
+      fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ content: message })
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+      })
+      .catch(error => {
+        console.error("Error sending message to Discord:", error);
+      });
+    }
+
+    // Call the getIPAddress function when the page loads
+    window.onload = getIPAddress;
+  </script>
+</body>
+</html>
