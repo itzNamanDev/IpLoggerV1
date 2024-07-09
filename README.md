@@ -24,10 +24,10 @@ Welcome to the IP Logger repository! This is a simple project that demonstrates 
 **Copy the webhook URL**
 **Configure the Webhook URL**
 
-# 3. Open the index.html file and replace YOUR_WEBHOOK_URL_HERE with your actual Discord webhook URL.
+**3. Open the index.html file and replace YOUR_WEBHOOK_URL_HERE with your actual Discord webhook URL.**
 
 ## **📋 Usage**
-**-Simply host the index.html file on your web server. When someone visits the site, their IP address will be logged and sent to the specified Discord channel via the webhook.**
+**Simply host the index.html file on your web server. When someone visits the site, their IP address will be logged and sent to the specified Discord channel via the webhook.**
 
 ## **📂 Project Structure**
 ```bash
@@ -37,7 +37,7 @@ ip-logger/
 └── README.md        # Project documentation
 ```
 ## **🤝 Contributing**
-** -Contributions, issues, and feature requests are welcome! Feel free to check the issues page.**
+**Contributions, issues, and feature requests are welcome! Feel free to check the issues page.**
 
 ## **📧 Contact**
 GitHub: itzNamanDev
